@@ -1,31 +1,31 @@
 name: "khulnasoft"
 repository: github.com/khulnasoft-labs/vul-plugin-khulnasoft
-version: "master"
+version: "v0.0.1"
 usage: vul khulnasoft <srcPath>
 description: A Vul plugin that sends results to KhulnaSoft.
 platforms:
   - selector: # optional
       os: linux
       arch: amd64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/master/linux_amd64_master.tar.gz
+    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/v0.0.1/linux_amd64_v0.0.1.tar.gz
     bin: ./khulnasoft
   - selector:
       os: linux
       arch: arm64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/master/linux_arm64_master.tar.gz
+    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/v0.0.1/linux_arm64_v0.0.1.tar.gz
     bin: ./khulnasoft
   - selector:
       os: darwin
       arch: amd64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/master/darwin_amd64_master.tar.gz
+    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/v0.0.1/darwin_amd64_v0.0.1.tar.gz
     bin: ./khulnasoft
   - selector:
       os: darwin
       arch: arm64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/master/darwin_arm64_master.tar.gz
+    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/v0.0.1/darwin_arm64_v0.0.1.tar.gz
     bin: ./khulnasoft
   - selector:
       os: windows
       arch: amd64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/master/windows_amd64_master.tar.gz
+    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/v0.0.1/windows_amd64_v0.0.1.tar.gz
     bin: ./khulnasoft
