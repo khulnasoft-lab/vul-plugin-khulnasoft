@@ -1,5 +1,5 @@
 name: "khulnasoft"
-repository: github.com/khulnasoft-labs/vul-plugin-khulnasoft
+repository: github.com/khulnasoft-lab/vul-plugin-khulnasoft
 version: "PLACEHOLDERVERSION"
 usage: vul khulnasoft <srcPath>
 description: A Vul plugin that sends results to KhulnaSoft.
@@ -7,25 +7,25 @@ platforms:
   - selector: # optional
       os: linux
       arch: amd64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/linux_amd64_PLACEHOLDERVERSION.tar.gz
+    uri: https://github.com/khulnasoft-lab/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/linux_amd64_PLACEHOLDERVERSION.tar.gz
     bin: ./khulnasoft
   - selector:
       os: linux
       arch: arm64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/linux_arm64_PLACEHOLDERVERSION.tar.gz
+    uri: https://github.com/khulnasoft-lab/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/linux_arm64_PLACEHOLDERVERSION.tar.gz
     bin: ./khulnasoft
   - selector:
       os: darwin
       arch: amd64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/darwin_amd64_PLACEHOLDERVERSION.tar.gz
+    uri: https://github.com/khulnasoft-lab/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/darwin_amd64_PLACEHOLDERVERSION.tar.gz
     bin: ./khulnasoft
   - selector:
       os: darwin
       arch: arm64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/darwin_arm64_PLACEHOLDERVERSION.tar.gz
+    uri: https://github.com/khulnasoft-lab/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/darwin_arm64_PLACEHOLDERVERSION.tar.gz
     bin: ./khulnasoft
   - selector:
       os: windows
       arch: amd64
-    uri: https://github.com/khulnasoft-labs/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/windows_amd64_PLACEHOLDERVERSION.tar.gz
+    uri: https://github.com/khulnasoft-lab/vul-plugin-khulnasoft/releases/download/PLACEHOLDERVERSION/windows_amd64_PLACEHOLDERVERSION.tar.gz
     bin: ./khulnasoft
