@@ -8,10 +8,6 @@ on:
     paths:
       - plugin.yaml
 
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-
 jobs:
   Update-images:
     if: github.event.pull_request.merged == true
@@ -24,20 +20,19 @@ jobs:
     - name: Login to docker.io registry
       uses: docker/login-action@v2
       with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          
-    - name: Extract metadata (tags, labels) for Docker
-      id: meta
-      uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
-      with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-   
-    - name: Build and push Docker image
-      uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
-      with:
-        context: .
-        push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
+        username: ${{ secrets.KHULNASOFT_DOCKERHUB_USER }}
+        password: ${{ secrets.KHULNASOFT_DOCKERHUB_TOKEN }}
+    - name: Extract version
+      run: "echo \"new_version=$(grep 'version: ' plugin.yaml | cut -d '\"' -f2)\" >> $GITHUB_ENV"
+    - name: Change image versions to latest
+      run: |
+        docker pull khulnasoft/khulnasoft-scanner:${{ env.new_version }}-amd64
+        docker tag khulnasoft/khulnasoft-scanner:${{ env.new_version }}-amd64 khulnasoft/khulnasoft-scanner:latest-amd64
+        docker push khulnasoft/khulnasoft-scanner:latest-amd64
+        
+        docker pull khulnasoft/khulnasoft-scanner:${{ env.new_version }}-arm64
+        docker tag khulnasoft/khulnasoft-scanner:${{ env.new_version }}-arm64 khulnasoft/khulnasoft-scanner:latest-arm64
+        docker push khulnasoft/khulnasoft-scanner:latest-arm64
+        
+        docker manifest create khulnasoft/khulnasoft-scanner:latest khulnasoft/khulnasoft-scanner:latest-amd64 khulnasoft/khulnasoft-scanner:latest-arm64
+        docker manifest push khulnasoft/khulnasoft-scanner:latest
