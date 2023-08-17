@@ -32,8 +32,3 @@ jobs:
             {
               "link": "${{ steps.cpr.outputs.pull-request-url }}"
             }
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.CODE_TEAM_SLACK_WEBHOOK }}
-      - name: Send Teams message
-        run: |
-          curl -H "Content-Type: application/json" -d '{"text": "New pull request opened: '${{ steps.cpr.outputs.pull-request-url }}'"}' ${{ secrets.TEAMS_WEBHOOK_URL }}
